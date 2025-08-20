@@ -6,7 +6,7 @@ import useVuePlugin from './plugins/use-vue';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'Reactjs最佳实践',
+  title: '算法在实际引用中的最佳实践',
   tagline: 'Dinosaurs are cool',
   favicon: 'img/favicon.ico',
 
@@ -16,7 +16,7 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://docs-use-docusaurus.vercel.app/',
+  url: 'https://javascript-algorithms.vercel.app/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -45,7 +45,7 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/cbtpro/docs-use-docusaurus/tree/main/docs',
+          editUrl: 'https://github.com/cbtpro/javascript-algorithms/tree/main/docs',
         },
         blog: {
           showReadingTime: true,
@@ -56,7 +56,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/cbtpro/docs-use-docusaurus/tree/main/blog',
+            'https://github.com/cbtpro/javascript-algorithms/tree/main/blog',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -73,9 +73,9 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'Reactjs最佳实践',
+      title: '算法在实际引用中的最佳实践',
       logo: {
-        alt: 'Reactjs最佳实践 Logo',
+        alt: '算法在实际引用中的最佳实践 Logo',
         src: 'img/logo.svg',
       },
       items: [
@@ -101,7 +101,7 @@ const config: Config = {
             position: 'right'
           },
           {
-            href: 'https://github.com/cbtpro/docs-use-docusaurus',
+            href: 'https://github.com/cbtpro/javascript-algorithms',
             label: 'GitHub',
             position: 'right',
           },
