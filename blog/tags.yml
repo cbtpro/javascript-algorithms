@@ -1,0 +1,52 @@
+facebook:
+  label: Facebook
+  permalink: /facebook
+  description: Facebook tag description
+
+hello:
+  label: Hello
+  permalink: /hello
+  description: Hello tag description
+
+docusaurus:
+  label: Docusaurus
+  permalink: /docusaurus
+  description: Docusaurus tag description
+
+hola:
+  label: Hola
+  permalink: /hola
+  description: Hola tag description
+
+createElement:
+  label: Create Element
+  permalink: /create-element
+  description: Create Element tag description
+js:
+  label: JavaScript
+  permalink: /js
+  description: JavaScript tag description
+dom:
+  label: DOM
+  permalink: /dom
+  description: DOM tag description
+react:
+  label: React
+  permalink: /react
+  description: React tag description
+typescript:
+  label: TypeScript
+  permalink: /typescript
+  description: TypeScript tag description
+setTimeout:
+  label: Set Timeout
+  permalink: /set-timeout
+  description: Set Timeout tag description
+react-live:
+  label: React Live
+  permalink: /react-live
+  description: React Live tag description
+组件:
+  label: 组件
+  permalink: /组件
+  description: 组件 tag description

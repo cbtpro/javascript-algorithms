@@ -1,0 +1,108 @@
+---
+slug: 在ts中编写setTimeout
+title: 在ts中编写setTimeout
+authors: [cbtpro]
+tags: [react, typescript, setTimeout]
+---
+
+
+import SetTimeoutFunctionDemo from '@site/src/components/set-timeout-function/Demo.tsx'
+
+使用reactjs拥抱typescript
+
+<SetTimeoutFunctionDemo />
+<br />
+
+:::tip
+```js
+import React, { useState, useEffect } from 'react';
+
+interface Props {
+  countdown?: number; // 初始倒计时秒数
+  onEnd?: () => void; // 倒计时结束
+  onStop?: () => void; // 手动停止/暂停
+  onCompleted?: () => void; // 停止或结束都会执行
+}
+
+export default function CountdownTimer({
+  countdown = 10,
+  onEnd = () => {},
+  onStop = () => {},
+  onCompleted = () => {},
+}: Props) {
+  const [count, setCount] = useState(countdown);
+  const [timer, setTimer] = useState<ReturnType<typeof setTimeout> | null>(null);
+  const [isRunning, setIsRunning] = useState(false);
+
+  // 启动倒计时
+  const start = (currentCount = count) => {
+    if (timer) clearTimeout(timer); // 避免重复定时器
+    setIsRunning(true);
+    setCount(currentCount);
+
+    if (currentCount > 0) {
+      const timerId = setTimeout(() => {
+        start(currentCount - 1);
+      }, 1000);
+      setTimer(timerId);
+    } else {
+      // 倒计时结束
+      setIsRunning(false);
+      onEnd();
+      onCompleted();
+    }
+  };
+
+  // 暂停倒计时
+  const pause = () => {
+    if (timer) {
+      clearTimeout(timer);
+      setTimer(null);
+    }
+    setIsRunning(false);
+    onStop();
+    onCompleted();
+  };
+
+  // 继续倒计时
+  const resume = () => {
+    if (!isRunning && count > 0) {
+      start(count);
+    }
+  };
+
+  // 重置倒计时
+  const reset = () => {
+    if (timer) {
+      clearTimeout(timer);
+      setTimer(null);
+    }
+    setCount(countdown);
+    setIsRunning(false);
+  };
+
+  // 卸载时清理定时器
+  useEffect(() => {
+    return () => {
+      if (timer) clearTimeout(timer);
+    };
+  }, [timer]);
+
+  return (
+    <div>
+      <div>
+        倒计时 {count} {isRunning ? '进行中' : '已停止'}
+      </div>
+      <div style={{ marginTop: 8 }}>
+        <button onClick={() => start(countdown)}>开始</button>
+        <button onClick={pause} disabled={!isRunning}>暂停</button>
+        <button onClick={resume} disabled={isRunning || count === 0}>继续</button>
+        <button onClick={reset}>重置</button>
+      </div>
+    </div>
+  );
+}
+
+```
+
+:::

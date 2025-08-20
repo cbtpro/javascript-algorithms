@@ -1,0 +1,58 @@
+---
+slug: 使用vue组件
+title: 使用vue组件
+authors: [cbtpro]
+tags: [docusaurus]
+---
+
+Blog posts support [Docusaurus Markdown features](https://docusaurus.io/docs/markdown-features), such as [MDX](https://mdxjs.com/).
+
+:::tip
+
+使用vue组件
+
+```html
+
+// 引入转换包
+
+import { uvc } from 'use-vue-component';
+
+// 引入vue组件
+
+import test from '@site/src/components/vue/test.vue';
+
+// 转换
+
+export const HelloWorld = uvc(test);
+
+<HelloWorld />
+
+
+// 引入vue组件
+
+import hello from '@site/src/components/vue/hello.vue';
+
+// 转换
+
+export const Hello = uvc(hello);
+
+// 传参
+<Hello name="john" />
+```
+
+## 注意，import和export的前后都必须空一行
+
+import { uvc } from 'use-vue-component';
+
+import test from '@site/src/components/vue/test.vue';
+
+export const HelloWorld = uvc(test);
+
+<HelloWorld />
+
+import hello from '@site/src/components/vue/hello.vue';
+
+export const Hello = uvc(hello);
+
+<Hello name="peter" />
+:::
